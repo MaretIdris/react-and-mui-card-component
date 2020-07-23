@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#select-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*Add min height 100vh to center child element inside of the full viewport*/
+    min-height: 100vh;
+    /*margin: 20px 0;*/
+}
+
+#weather-container {
+    display: flex;
+    max-width: 1000px;
+    background-color: red;
+    margin: 0 auto;
+}
+
+img {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+}
