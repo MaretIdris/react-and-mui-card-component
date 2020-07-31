@@ -1,7 +1,20 @@
+/* Responsive layout styling */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+p {
+    margin: 5px 0;
 }
 
 #select-container {
@@ -10,18 +23,75 @@
     align-items: center;
     /*Add min height 100vh to center child element inside of the full viewport*/
     min-height: 100vh;
-    /*margin: 20px 0;*/
 }
 
 #weather-container {
     display: flex;
+    justify-content: space-between;
     max-width: 1000px;
-    background-color: red;
     margin: 0 auto;
 }
 
+.weather-text-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image-container {
+    width: 60%;
+}
+
 img {
-    width: 600px;
-    height: 600px;
+    display: block;
+    /*Add width: 100%; to make image responsive.*/
+    width: 100%;
     object-fit: cover;
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/object-position */
+    object-position: center;
+    height: 600px;
+    /* max-height: 100vh makes sure that when viewport is smaller than 600px, the image scales down and takes 100vh of space. */
+    max-height: 100vh;
+}
+
+/* -------------------- */
+
+/* Media queries: Basic padding added when viewport is smaller than 1075px and reduce heading size. */
+
+/* On viewports that are 1075px or smaller, apply styles below. */
+@media screen and (max-width: 1075px) {
+
+    .weather-text-container {
+        padding: 0 40px;
+    }
+}
+
+/* On viewports that are 775px or smaller, apply styles below. */
+@media screen and (max-width: 775px) {
+
+    .weather-text-container {
+        padding: 0 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+}
+
+/* On viewports that are 460px or smaller, apply styles below. */
+@media screen and (max-width: 460px) {
+
+    .weather-text-container {
+        padding: 0 10px;
+        width: 50%;
+    }
+
+    .image-container {
+        width: 50%;
+    }
+
+    h1 {
+        font-size: 1.4em;
+    }
 }
