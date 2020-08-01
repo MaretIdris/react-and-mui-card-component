@@ -33,6 +33,9 @@ class App extends Component {
         status: {
             danger: 'orange',
         },
+        typography: {
+            fontFamily: ['Playfair Display'],
+        },
     });
 
     render() {

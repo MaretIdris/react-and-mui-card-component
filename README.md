@@ -76,3 +76,6 @@ ReactDOM.render(
 git add -A ; git commit --amend --no-edit ; git push -f
 
 ```
+
+# Add hover effect on JSX
+- `onMouseOver={this.openDropdown}`

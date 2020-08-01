@@ -33,7 +33,9 @@ class SelectLocation extends Component {
 
         return (
             <div id="select-container">
-                <FormControl variant="outlined" className={classes.formControl}>
+                <FormControl
+                    variant="outlined"
+                    className={classes.formControl}>
                     <InputLabel>Choose a location</InputLabel>
                     <Select
                         onChange={handleChange}
