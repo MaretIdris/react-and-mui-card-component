@@ -35,15 +35,17 @@ class SelectLocation extends Component {
             <div id="select-container">
                 <FormControl
                     variant="outlined"
-                    className={classes.formControl}>
+                    className={classes.formControl}
+                >
                     <InputLabel>Choose a location</InputLabel>
                     <Select
+                        className={classes.bla}
                         onChange={handleChange}
                         label="Choose a location">
                         {
                             // Print out location names from the arrayOfLocations.js file
                             arrayOfLocations.map(
-                                (location, index) => <MenuItem key={index} value={index}>{location.location}</MenuItem>)
+                                (location, index) => <MenuItem className={classes.bla} key={index} value={index}>{location.location}</MenuItem>)
                         }
                     </Select>
                 </FormControl>
@@ -61,7 +63,14 @@ SelectLocation.propTypes = {
 const myStyles = {
     formControl: {
         minWidth: 200,
+        '& label': {
+            fontFamily: ['Fjalla One'].join(","),
+        },
     },
+    bla: {
+        color: "red",
+        fontFamily: ['Fjalla One'].join(","),
+    }
 };
 
 /** Wrap the "actual component" w/ the one that Material UI will generate (this passes the props `classes` down).  */
