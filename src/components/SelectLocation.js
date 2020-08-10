@@ -29,23 +29,25 @@ class SelectLocation extends Component {
         }
 
         // The prop `classes` comes from `withStyles()`.
-        const classes = this.props.classes;
+        const {foo, bar, baz} = this.props.classes;
 
         return (
             <div id="select-container">
                 <FormControl
                     variant="outlined"
-                    className={classes.formControl}
+                    className={foo}
                 >
-                    <InputLabel>Choose a location</InputLabel>
+                    <InputLabel className={baz}>Choose a location</InputLabel>
                     <Select
-                        className={classes.bla}
+                        className={bar}
                         onChange={handleChange}
                         label="Choose a location">
                         {
                             // Print out location names from the arrayOfLocations.js file
                             arrayOfLocations.map(
-                                (location, index) => <MenuItem className={classes.bla} key={index} value={index}>{location.location}</MenuItem>)
+                                (location, index) => <MenuItem
+                                    className={bar} key={index}
+                                    value={index}>{location.location}</MenuItem>)
                         }
                     </Select>
                 </FormControl>
@@ -59,18 +61,25 @@ SelectLocation.propTypes = {
     classes: PropTypes.object.isRequired,
 }
 
-/** Define your style overrides here. */
+/**
+ * Define your style overrides here.
+ * 1. Style names doesn't matter. They are just for readability. MUI doesn't
+ *    care.
+ * 2. Styles don't get passed down to the children components. Make sure to
+ *    pass the styles to every child that needs them. Eg. classes.bar in
+ *    <Select> and <MenuItem>.
+ */
 const myStyles = {
-    formControl: {
+    foo: {
         minWidth: 200,
-        '& label': {
-            fontFamily: ['Fjalla One'].join(","),
-        },
     },
-    bla: {
+    bar: {
         color: "red",
         fontFamily: ['Fjalla One'].join(","),
-    }
+    },
+    baz: {
+        fontFamily: ['Fjalla One'].join(","),
+    },
 };
 
 /** Wrap the "actual component" w/ the one that Material UI will generate (this passes the props `classes` down).  */

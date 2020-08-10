@@ -8,22 +8,22 @@ import purple from '@material-ui/core/colors/purple';
 import green from '@material-ui/core/colors/green';
 
 
-    /**
-     * Create a new theme that allows the default theme to be overriden.
-     * Docs: https://v3.material-ui.com/customization/themes/#muithemeprovider
-     */
-    const myTheme = createMuiTheme({
-        palette: {
-            primary: purple,
-            secondary: green,
-        },
-        status: {
-            danger: 'orange',
-        },
-        typography: {
-            fontFamily: ['Dancing Script', 'Fjalla One'].join(','),
-        },
-    });
+/**
+ * Create a new theme that allows the default theme to be overriden.
+ * Docs: https://v3.material-ui.com/customization/themes/#muithemeprovider
+ */
+const myTheme = createMuiTheme({
+    palette: {
+        primary: purple,
+        secondary: green,
+    },
+    status: {
+        danger: 'orange',
+    },
+    typography: {
+        fontFamily: ['Dancing Script', 'Fjalla One'].join(','),
+    },
+});
 
 class App extends Component {
     constructor(props) {
@@ -49,7 +49,8 @@ class App extends Component {
                         arrayOfLocations={arrayOfLocations}
                         saveLocationIndexFunction={this.saveLocationIndexFunction}
                     />
-                    <LocationData arrayOfLocations={arrayOfLocations} selectedLocationIndex={selectedLocationIndex}/>
+                    <LocationData arrayOfLocations={arrayOfLocations}
+                                  selectedLocationIndex={selectedLocationIndex}/>
                 </React.Fragment>
             </MuiThemeProvider>
         );
