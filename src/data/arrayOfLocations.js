@@ -3,7 +3,7 @@ const mountainView = {
     tempInC: 23,
     feelsLike: "Warm and Sunny",
     airQualityIndex: "Fair",
-    image: "/images/mv-img.jpg",
+    image: "https://images.unsplash.com/photo-1559771752-cf816c66e921?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3889&q=80",
 };
 
 const sunnyvale = {
@@ -11,7 +11,7 @@ const sunnyvale = {
     tempInC: 18,
     feelsLike: "Windy and Cloudy",
     airQualityIndex: "Moderate",
-    image: "/images/sv-img.jpg",
+    image: "https://images.unsplash.com/photo-1573317670379-593542fb6ffa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=4597&q=80",
 };
 
 const paloAlto = {
@@ -19,7 +19,7 @@ const paloAlto = {
     tempInC: 27,
     feelsLike: "Hot and Sunny",
     airQualityIndex: "Excellent",
-    image: "/images/pa-img.jpg",
+    image: "https://images.unsplash.com/photo-1561137259-d550c40ec99d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1558&q=80",
 };
 
 const arrayOfLocations = [mountainView, sunnyvale, paloAlto];
