@@ -1,14 +1,13 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Goal](#goal)
 - [Diagram](#diagram)
 - [Wireframe](#wireframe)
-- [To Do](#to-do)
+- [Modify Theme in MUI](#modify-theme-in-mui)
+- [How to style MUI components](#how-to-style-mui-components)
 - [index.js](#indexjs)
 - [App.js](#appjs)
-- [Amend this commit to the previous commit](#amend-this-commit-to-the-previous-commit)
 - [Leave HTML `<select>` option blank](#leave-html-select-option-blank)
 - [Is JSON a string?](#is-json-a-string)
 - [DOM API](#dom-api)
@@ -16,6 +15,7 @@
 - [Commit in Git](#commit-in-git)
 - [Add hover effect on JSX](#add-hover-effect-on-jsx)
 - [CSS Specificity](#css-specificity)
+- [Owners of the images](#owners-of-the-images)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -35,12 +35,30 @@
 
 - ![](public/images/wireframes2.jpg)
 
-# To Do
+# Modify Theme in MUI
 
-- [x] [Create issues on GitHub.](https://github.com/MaretIdris/react-and-pm
-      -learning/issues)
-- [x] Estimate time frames.
-- [ ] Build the app.
+- [MUI documentation on Theming](https://material-ui.com/customization/theming/)
+- [Default Theme all the options](https://material-ui.com/customization/default-theme/?expand-path=$.typography)
+  - A caption is text that appears below an image. One of the smallest font
+    sizes, may be used sparingly to annotate other visual elements.
+  - Overline is one of the smallest font sizes, might be used to introduce a
+    headline.
+    - [Learn about Material Design type system](https://material.io/design/typography/the-type-system.html#type-scale)
+- [How to override a style globally with CSS](https://v4-3-3.material-ui.com/customization/globals/#css):
+  When the configuration variables aren't powerful enough, you can take
+  advantage of the overrides key of the theme to potentially change every single
+  style injected by Material-UI into the DOM. That's a really powerful feature.
+- [How to override a style globally with Default props](https://v4-3-3.material-ui.com/customization/globals/#default-props):
+  You can change the default props of all the Material-UI components. We expose
+  a props key in the theme for this use case.
+
+# How to style MUI components
+
+1. Add all the MUI components (e.g. `<CardActionArea>`, `<CardMedia>`) to the
+   React components.
+2. Do **theme** level overrides (typography, spacing, globals, palette,
+   breakpoints, z-index)
+3. Add local styling to each component where needed.
 
 # index.js
 
@@ -61,15 +79,6 @@ ReactDOM.render(
 - `App.js` is the first component. All components start with a capital letter .
   This is how the nested components come together with HTML.
   ![](public/images/app-nesting.jpg)
-
-# Amend this commit to the previous commit
-
-- Run in the terminal
-- Stage files:
-  - `git add -A`
-- Commit and amend files:
-
-  - `git commit --amend --no-edit ; git push -f`
 
 # Leave HTML `<select>` option blank
 
@@ -122,3 +131,12 @@ git add -A ; git commit -m  "Change Select component font" ; git push
 - Only use `!important` on page-specific CSS that overrides foreign CSS (from
   external libraries, like Bootstrap or normalize.css).
 - [More on CSS Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity#How_is_specificity_calculated)
+
+# Owners of the images
+
+- [Mountain View image](https://unsplash.com/photos/WL5kcYYvFOU) by
+  [Cameron Venti](https://unsplash.com/@ventiviews)
+- [Sunnyvale image](https://unsplash.com/photos/-dUjtzo9h7Q) by
+  [Roxann C](https://unsplash.com/@partyroxy)
+- [Palo Alto image](https://unsplash.com/photos/QGbcc4Ckg6U) by
+  [Emily Karakis](https://unsplash.com/@iemyoung)
