@@ -14,7 +14,7 @@ class WeatherData extends Component {
 
         return (
             <div className="weather-text-container">
-                <CardActionArea className="text-action-area">
+                <CardActionArea className="text-action-area ">
                     <CardContent>
                         <Typography component="h1" variant="h5"
                                     gutterBottom>{location}</Typography>

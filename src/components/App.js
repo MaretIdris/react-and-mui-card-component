@@ -31,7 +31,7 @@ const theme = createMuiTheme({
         danger: 'orange',
     },
     typography: {
-        fontFamily: ['Dancing Script', 'Fjalla One'].join(','),
+        fontFamily: ['Roboto Slab', 'Fjalla One', 'serif'].join(','),
         fontSize: 17,
     },
 });

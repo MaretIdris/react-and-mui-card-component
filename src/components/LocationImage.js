@@ -5,10 +5,17 @@ import {withStyles} from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
 
-const styles = theme => ({
-    photo: {
+const styles = ({
+    imageStyling: {
         height: 600,
-        width: 600,
+        display: "block",
+        /*Add width: 100%; to make image responsive.*/
+        width: "100%",
+        objectFit: "cover",
+        /* https://developer.mozilla.org/en-US/docs/Web/CSS/object-position */
+        objectPosition: "center",
+        /* max-height: 100vh makes sure that when viewport is smaller than 600px, the image scales down and takes 100vh of space. */
+        maxHeight: "100vh",
     }
 });
 
@@ -18,12 +25,12 @@ class LocationImage extends Component {
         // If index has not been generated yet, return nothing.
         if (index === undefined) return null;
         const {location, image} = this.props.arrayOfLocations[index];
-        const {photo} = this.props.classes;
+        const {imageStyling} = this.props.classes;
 
         return (
             <CardActionArea className="image-container">
                 <CardMedia
-                    className={photo}
+                    className={imageStyling}
                     image={image}
                     alt={location}/>
             </CardActionArea>

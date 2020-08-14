@@ -6,101 +6,82 @@
     box-sizing: border-box;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100vh;
-}
 
 /*p {*/
 /*    margin: 5px 0;*/
 /*}*/
 
-#select-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /*Add min height 100vh to center child element inside of the full viewport*/
-    min-height: 100vh;
+@media screen and (min-width: 0px) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    #select-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*Add min height 100vh to center child element inside of the full viewport*/
+        min-height: 100vh;
+    }
+
+    #weather-container {
+        /*display: flex;*/
+        justify-content: space-between;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .weather-text-container {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .text-action-area {
+        flex-grow: 1;
+        padding: 0 20px !important;
+    }
+
+
 }
 
-#weather-container {
-    /*display: flex;*/
-    justify-content: space-between;
-    max-width: 1000px;
-    margin: 0 auto;
-}
 
-.weather-text-container {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.text-action-area {
-    flex-grow: 1;
-}
-
+/* Overriding MUI .MuiCardActionArea-root width: 100% */
 .image-container {
-    /* Overriding the MUI "MuiCardActionArea-root" class*/
     width: 60% !important;
-}
-
-img {
-    display: block;
-    /*Add width: 100%; to make image responsive.*/
-    width: 100%;
-    object-fit: cover;
-    /* https://developer.mozilla.org/en-US/docs/Web/CSS/object-position */
-    object-position: center;
-    height: 600px;
-    /* max-height: 100vh makes sure that when viewport is smaller than 600px, the image scales down and takes 100vh of space. */
-    max-height: 100vh;
-}
-
-.CustomizeTouchRipple {
-  color: green;
 }
 
 /*!* -------------------- *!*/
 
-/*!* Media queries: Basic padding added when viewport is smaller than 1075px and reduce heading size. *!*/
+/* On viewports that are 775px or smaller, apply styles below. */
+@media screen and (max-width: 775px) {
 
-/*!* On viewports that are 1075px or smaller, apply styles below. *!*/
-/*@media screen and (max-width: 1075px) {*/
+    .weather-text-container {
+        width: 50%;
+    }
 
-/*    .weather-text-container {*/
-/*        padding: 0 40px;*/
-/*    }*/
-/*}*/
+    /* Overriding MUI .MuiCardActionArea-root width: 100% */
+    .image-container {
+        width: 50% !important;
+    }
 
-/*!* On viewports that are 775px or smaller, apply styles below. *!*/
-/*@media screen and (max-width: 775px) {*/
+    h1 {
+        font-size: 1.6em !important;
+    }
+}
 
-/*    .weather-text-container {*/
-/*        padding: 0 20px;*/
-/*    }*/
+/* On viewports that are 460px or smaller, apply styles below. */
+@media screen and (max-width: 460px) {
 
-/*    h1 {*/
-/*        font-size: 1.6em;*/
-/*    }*/
-/*}*/
-
-/*!* On viewports that are 460px or smaller, apply styles below. *!*/
-/*@media screen and (max-width: 460px) {*/
-
-/*    .weather-text-container {*/
-/*        padding: 0 10px;*/
-/*        width: 50%;*/
-/*    }*/
-
-/*    .image-container {*/
-/*        width: 50%;*/
-/*    }*/
-
-/*    h1 {*/
-/*        font-size: 1.4em;*/
-/*    }*/
-/*}*/
+    .text-action-area {
+        padding: 0 !important;
+    }
+    h1 {
+        font-size: 1.4em !important;
+    }
+}
