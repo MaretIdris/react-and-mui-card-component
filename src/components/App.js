@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../css/index.css';
 import SelectLocation from "./SelectLocation";
-import LocationData from "./LocationData";
+import LocationCard from "./LocationCard";
 import arrayOfLocations from '../data/arrayOfLocations';
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 import purple from '@material-ui/core/colors/purple';
@@ -12,7 +12,17 @@ import green from '@material-ui/core/colors/green';
  * Create a new theme that allows the default theme to be overriden.
  * Docs: https://v3.material-ui.com/customization/themes/#muithemeprovider
  */
-const myTheme = createMuiTheme({
+const theme = createMuiTheme({
+    overrides: {
+        // Style sheet name
+        MuiTouchRipple: {
+            // Name of the rule
+            child: {
+                // Some CSS
+                backgroundColor: "orange"
+            }
+        }
+    },
     palette: {
         primary: purple,
         secondary: green,
@@ -22,6 +32,7 @@ const myTheme = createMuiTheme({
     },
     typography: {
         fontFamily: ['Dancing Script', 'Fjalla One'].join(','),
+        fontSize: 17,
     },
 });
 
@@ -43,13 +54,13 @@ class App extends Component {
         const {selectedLocationIndex} = this.state;
 
         return (
-            <MuiThemeProvider theme={myTheme}>
+            <MuiThemeProvider theme={theme}>
                 <React.Fragment>
                     <SelectLocation
                         arrayOfLocations={arrayOfLocations}
                         saveLocationIndexFunction={this.saveLocationIndexFunction}
                     />
-                    <LocationData arrayOfLocations={arrayOfLocations}
+                    <LocationCard arrayOfLocations={arrayOfLocations}
                                   selectedLocationIndex={selectedLocationIndex}/>
                 </React.Fragment>
             </MuiThemeProvider>

@@ -1,4 +1,9 @@
 import React, {Component} from 'react';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from "@material-ui/core/CardContent";
+import Button from '@material-ui/core/Button';
+import {Typography} from "@material-ui/core";
 
 class WeatherData extends Component {
     render() {
@@ -9,10 +14,23 @@ class WeatherData extends Component {
 
         return (
             <div className="weather-text-container">
-                <h1>{location}</h1>
-                <p>- {tempInC}°C</p>
-                <p>- {feelsLike}</p>
-                <p>- Air Quality: {airQualityIndex}</p>
+                <CardActionArea className="text-action-area">
+                    <CardContent>
+                        <Typography component="h1" variant="h5"
+                                    gutterBottom>{location}</Typography>
+                        <Typography variant="body2" color="textSecondary"
+                                    component="p">- {tempInC}°C</Typography>
+                        <Typography variant="body2" color="textSecondary"
+                                    component="p">- {feelsLike}</Typography>
+                        <Typography variant="body2" color="textSecondary"
+                                    component="p">- Air
+                            Quality: {airQualityIndex}</Typography>
+                    </CardContent>
+                </CardActionArea>
+                <CardActions>
+                    <Button size="small">Share</Button>
+                    <Button size="small">Learn more</Button>
+                </CardActions>
             </div>
         );
     }
